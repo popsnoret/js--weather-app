@@ -1,25 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
 
 :root {
-  --bg-sun: radial-gradient(
-    circle at 50% 50%,
-    #f5f5a8 0%,
-    #e6e6a0 15%,
-    #d4b896 35%,
-    #c48a6b 60%,
-    #b36666 85%,
-    #8b5a5a 100%
-  );
-  --bg-moon: radial-gradient(
-    circle at 50% 50%,
-    #2a2a3a 0%,
-    #1a1a2e 15%,
-    #16213e 35%,
-    #0f3460 60%,
-    #0a1a2e 85%,
-    #000000 100%
-  );
-  --sun: #ffbf00;
+  --bg-sun: radial-gradient(circle at 50% 50%, #f5f5a8 0%, #e6e6a0 15%, #d4b896 35%, #c48a6b 60%, #b36666 85%, #8b5a5a 100%);
+  --bg-moon: radial-gradient(circle at 50% 50%, #2a2a3a 0%, #1a1a2e 15%, #16213e 35%, #0f3460 60%, #0a1a2e 85%, #000000 100%);
+  --sun: #eded84;
   --moon: #f3f3ff;
 }
 
@@ -28,6 +12,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: "EB Garamond", serif;
 }
@@ -39,21 +24,20 @@ body {
   align-items: center;
   justify-content: center;
   background: var(--bg-sun);
-
   font-size: 140%;
-
-  h1 {
-    font-size: 3.5rem;
-  }
-
-  h3 {
-    margin-top: 1rem;
-  }
 
   &.moon {
     background: var(--bg-moon);
     color: white;
   }
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+h3 {
+  margin-top: 1rem;
 }
 
 .sun {
@@ -62,25 +46,46 @@ body {
   margin-bottom: 2rem;
   border-radius: 50%;
   background: var(--sun);
-  box-shadow: 0 0 20px #ffff00, 0 0 40px #ff8c00, 0 0 60px #ff4500,
-    0 0 80px #ff0000;
-  animation: pulse 2s ease-in-out infinite alternate;
-
+  box-shadow: 0 0 20px #ffff00, 0 0 40px #ff8c00, 0 0 60px #ff4500, 0 0 80px #ff0000;
+  animation: pulse 5s ease-in-out infinite alternate;
   &.moon {
     background: var(--moon);
-    box-shadow: 0 0 15px #ffffff, 0 0 30px #e6e6fa, 0 0 45px #d3d3d3,
-      0 0 60px #c0c0c0;
-    animation: none;
+    box-shadow: 0 0 15px #ffffff, 0 0 30px #e6e6fa, 0 0 45px #d3d3d3, 0 0 60px #0f0505;
+    animation: shine 10s ease-in-out infinite alternate;
   }
 }
 
+
+
 @keyframes pulse {
   0% {
-    box-shadow: 0 0 20px #ffff00, 0 0 40px #ff8c00, 0 0 60px #ff4500,
-      0 0 80px #ff0000;
+    box-shadow: 0 0 20px #ffff00, 0 0 40px #ff8c00, 0 0 60px #ff4500, 0 0 80px #ff0000;
+  }
+  30% {
+    box-shadow: 0 0 30px #ffff33, 0 0 50px #ffa500, 0 0 70px #ff6347, 0 0 100px #ff3300;
+  }
+  50% {
+    box-shadow: 0 0 40px #ffff66, 0 0 60px #ff9933, 0 0 80px #ff5500, 0 0 120px #ff3300;
+  }
+  70% {
+    box-shadow: 0 0 35px #ffff99, 0 0 55px #ffcc33, 0 0 75px #ff6600, 0 0 110px #ff4400;
   }
   100% {
-    box-shadow: 0 0 30px #ffff00, 0 0 50px #ff8c00, 0 0 70px #ff4500,
-      0 0 100px #ff0000;
+    box-shadow: 0 0 30px #ffff00, 0 0 50px #ff8c00, 0 0 70px #ff4500, 0 0 100px #ff0000;
+  }
+}
+
+@keyframes shine {
+  0% {
+    background-color: white;
+    transform: scale(0.9);
+  }
+  50% {
+    background-color: hsl(0, 0%, 95%);
+    transform: scale(1.1);
+  }
+  100% {
+    background-color: hsl(0, 0%, 90%);
+    transform: scale(1.2);
   }
 }

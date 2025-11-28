@@ -1,5 +1,5 @@
 const response = {
-  name: "Stonktown",
-  description: "Klar himmel",
-  temperature: 10,
+  name: "Stonktown", // platsens namn
+  description: "Klar himmel", // väderbeskrivning
+  temperature: 10, //temperatur
 };
